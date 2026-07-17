@@ -1,510 +1,408 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Faizan Khan | Medical Billing Specialist</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<meta name="description" content="Medical Billing Specialist specializing in Revenue Cycle Management, Claims Processing, Denial Resolution and HIPAA Compliance.">
+
+<meta name="theme-color" content="#08111f">
+
+<meta property="og:title" content="Faizan Khan">
+
+<meta property="og:description" content="Medical Billing Specialist">
+
+<meta property="og:type" content="website">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="icon"
+type="image/svg+xml"
+href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='16' y='8' width='36' height='48' rx='7' fill='%2300d4ff'/%3E%3Crect x='10' y='8' width='8' height='48' rx='4' fill='%237b2ff7'/%3E%3Cline x1='26' y1='20' x2='44' y2='20' stroke='white' stroke-width='3'/%3E%3Cline x1='26' y1='30' x2='44' y2='30' stroke='white' stroke-width='3'/%3E%3Cline x1='26' y1='40' x2='40' y2='40' stroke='white' stroke-width='3'/%3E%3C/svg%3E">
 
 <style>
+  :root{
 
-:root{
---bg:#09111d;
---card:rgba(255,255,255,.08);
+--bg:#07111f;
+--bg2:#0e1829;
+--card:rgba(255,255,255,.07);
 --border:rgba(255,255,255,.12);
+
+--text:#ffffff;
+--muted:#b7bfd0;
+
 --primary:#00d4ff;
---secondary:#8a5cff;
---text:#fff;
---muted:#c4c9d4;
+--secondary:#7b2ff7;
+
+--radius:22px;
+
 }
 
 *{
+
 margin:0;
 padding:0;
 box-sizing:border-box;
+
+}
+
+html{
+
 scroll-behavior:smooth;
-font-family:Poppins,sans-serif;
+
 }
 
 body{
 
-background:
-radial-gradient(circle at top left,#00d4ff22,transparent 35%),
-radial-gradient(circle at bottom right,#8a5cff22,transparent 40%),
-var(--bg);
+font-family:Inter,sans-serif;
+
+background:var(--bg);
 
 color:white;
+
+overflow-x:hidden;
+
 }
 
-nav{
+body::before{
+
+content:"";
 
 position:fixed;
-width:100%;
-display:flex;
-justify-content:space-between;
-padding:20px 10%;
-backdrop-filter:blur(20px);
-background:rgba(0,0,0,.25);
-z-index:999;
+
+width:650px;
+height:650px;
+
+left:-220px;
+top:-250px;
+
+background:#00d4ff22;
+
+filter:blur(120px);
+
+animation:blob1 18s infinite alternate;
+
+pointer-events:none;
 
 }
 
-nav a{
-color:white;
-text-decoration:none;
-margin-left:25px;
-transition:.3s;
+body::after{
+
+content:"";
+
+position:fixed;
+
+width:650px;
+height:650px;
+
+right:-220px;
+bottom:-220px;
+
+background:#7b2ff722;
+
+filter:blur(120px);
+
+animation:blob2 22s infinite alternate;
+
+pointer-events:none;
+
 }
 
-nav a:hover{
+@keyframes blob1{
 
-color:var(--primary);
+from{
+
+transform:translate(0,0);
+
+}
+
+to{
+
+transform:translate(120px,90px);
+
+}
+
+}
+
+@keyframes blob2{
+
+from{
+
+transform:translate(0,0);
+
+}
+
+to{
+
+transform:translate(-120px,-120px);
+
+}
 
 }
 
 section{
 
-padding:100px 10%;
+padding:110px 9%;
+
+position:relative;
+
+z-index:10;
+
+}
+
+h1{
+
+font-size:clamp(52px,8vw,82px);
+
+line-height:1.1;
+
+font-weight:800;
+
+}
+
+h2{
+
+font-size:42px;
+
+margin-bottom:35px;
+
+}
+
+p{
+
+color:var(--muted);
+
+line-height:1.8;
+
+}
+
+.gradient{
+
+background:linear-gradient(90deg,var(--primary),var(--secondary));
+
+-webkit-background-clip:text;
+
+color:transparent;
+
+}
+
+nav{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+padding:20px 9%;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+background:rgba(8,14,28,.55);
+
+backdrop-filter:blur(18px);
+
+border-bottom:1px solid rgba(255,255,255,.06);
+
+z-index:9999;
+
+}
+
+.logo{
+
+font-size:28px;
+
+font-weight:800;
+
+letter-spacing:.5px;
+
+}
+
+.logo span{
+
+color:var(--primary);
+
+}
+
+.links{
+
+display:flex;
+
+gap:35px;
+
+}
+
+.links a{
+
+color:white;
+
+text-decoration:none;
+
+transition:.3s;
+
+font-weight:500;
+
+}
+
+.links a:hover{
+
+color:var(--primary);
 
 }
 
 .hero{
 
 min-height:100vh;
-display:flex;
+
+display:grid;
+
+grid-template-columns:1.3fr .7fr;
+
 align-items:center;
-justify-content:space-between;
-gap:50px;
+
+gap:60px;
 
 }
 
-.hero h1{
+.subtitle{
 
-font-size:60px;
-line-height:1.1;
+margin-top:18px;
 
-}
+font-size:24px;
 
-.hero span{
-
-background:linear-gradient(90deg,#00d4ff,#8a5cff);
--webkit-background-clip:text;
-color:transparent;
+font-weight:600;
 
 }
 
 .hero p{
 
-margin:20px 0;
-color:var(--muted);
-max-width:600px;
+margin:28px 0;
+
+max-width:650px;
 
 }
 
-button{
+.buttons{
 
-padding:14px 30px;
-border:none;
-border-radius:50px;
-background:linear-gradient(90deg,#00d4ff,#8a5cff);
+display:flex;
+
+gap:18px;
+
+margin-top:35px;
+
+flex-wrap:wrap;
+
+}
+
+.btn{
+
+padding:16px 34px;
+
+border-radius:999px;
+
+text-decoration:none;
+
+font-weight:700;
+
+transition:.35s;
+
+display:inline-block;
+
+}
+
+.primary{
+
+background:linear-gradient(90deg,var(--primary),var(--secondary));
+
 color:white;
-font-size:16px;
-cursor:pointer;
-transition:.3s;
 
 }
 
-button:hover{
+.secondary{
 
-transform:translateY(-5px);
-box-shadow:0 0 30px #00d4ff88;
+border:1px solid rgba(255,255,255,.15);
+
+color:white;
+
+background:rgba(255,255,255,.05);
+
+backdrop-filter:blur(18px);
 
 }
 
-.card{
+.btn:hover{
+
+transform:translateY(-6px);
+
+box-shadow:0 18px 40px rgba(0,212,255,.25);
+
+}
+
+.glass{
 
 background:var(--card);
+
 border:1px solid var(--border);
-backdrop-filter:blur(15px);
-padding:30px;
-border-radius:20px;
+
+backdrop-filter:blur(18px);
+
+border-radius:var(--radius);
+
+}
+
+.hero-card{
+
+padding:40px;
+
 transition:.4s;
 
 }
 
-.card:hover{
+.hero-card:hover{
 
 transform:translateY(-10px);
-box-shadow:0 0 35px rgba(0,212,255,.25);
+
+box-shadow:0 0 45px rgba(0,212,255,.2);
 
 }
 
-.grid{
+.stats{
 
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:25px;
 
-}
-
-.title{
-
-font-size:36px;
-margin-bottom:40px;
-
-}
-
-.timeline{
-
-border-left:2px solid var(--primary);
-padding-left:30px;
-
-}
-
-.item{
-
-margin-bottom:40px;
-position:relative;
-
-}
-
-.item::before{
-
-content:"";
-width:18px;
-height:18px;
-background:var(--primary);
-position:absolute;
-left:-40px;
-top:6px;
-border-radius:50%;
-box-shadow:0 0 15px var(--primary);
-
-}
-
-.skills{
-
-display:grid;
 gap:20px;
 
-}
-
-.bar{
-
-height:12px;
-background:#23334d;
-border-radius:30px;
-overflow:hidden;
+margin-top:25px;
 
 }
 
-.fill{
+.stat{
 
-height:100%;
-background:linear-gradient(90deg,#00d4ff,#8a5cff);
-width:0;
-transition:2s;
+padding:20px;
 
-}
+border-radius:16px;
 
-footer{
-
-text-align:center;
-padding:40px;
-color:#aaa;
+background:rgba(255,255,255,.04);
 
 }
 
-.reveal{
+.stat h3{
 
-opacity:0;
-transform:translateY(40px);
-transition:1s;
+font-size:30px;
 
-}
-
-.reveal.active{
-
-opacity:1;
-transform:none;
+margin-bottom:6px;
 
 }
-
-@media(max-width:900px){
-
-.hero{
-
-flex-direction:column;
-text-align:center;
-
-}
-
-.hero h1{
-
-font-size:45px;
-
-}
-
-nav{
-
-flex-direction:column;
-gap:10px;
-
-}
-
-}
-
-</style>
-</head>
-<body>
-
-<nav>
-
-<h2>Faizan.</h2>
-
-<div>
-
-<a href="#about">About</a>
-<a href="#experience">Experience</a>
-<a href="#skills">Skills</a>
-<a href="#contact">Contact</a>
-
-</div>
-
-</nav>
-
-<section class="hero">
-
-<div>
-
-<h1>Hi, I'm <span>Faizan Khan</span></h1>
-
-<h3>Medical Billing Specialist</h3>
-
-<p>
-
-Experienced Revenue Cycle Management professional specializing in eligibility verification, claims submission, denial management, payment posting, HIPAA compliance and payer relations.
-
-</p>
-
-<button>Download Resume</button>
-
-</div>
-
-<div class="card">
-
-<h2>Quick Stats</h2>
-
-<br>
-
-<h3>4+ Years Experience</h3>
-
-<p>Revenue Cycle Management</p>
-
-<br>
-
-<h3>Claims & Billing Expert</h3>
-
-<p>HIPAA Compliant</p>
-
-<br>
-
-<h3>Medical Billing</h3>
-
-<p>Prior Authorization • Denial Resolution</p>
-
-</div>
-
-</section>
-
-<section id="about" class="reveal">
-
-<h2 class="title">About Me</h2>
-
-<div class="grid">
-
-<div class="card">
-
-<h3>Who I Am</h3>
-
-<p>
-
-Detail-oriented Medical Billing Specialist with extensive experience improving reimbursement timelines, reducing claim denials, and maintaining accurate billing records.
-
-</p>
-
-</div>
-
-<div class="card">
-
-<h3>Core Strengths</h3>
-
-<ul>
-
-<li>Revenue Cycle Management</li>
-<li>Claims Submission</li>
-<li>Denial Appeals</li>
-<li>HIPAA Compliance</li>
-<li>Eligibility Verification</li>
-<li>Payment Posting</li>
-
-</ul>
-
-</div>
-
-</div>
-
-</section>
-
-<section id="experience" class="reveal">
-
-<h2 class="title">Experience</h2>
-
-<div class="timeline">
-
-<div class="item">
-
-<h3>Senior Billing Executive</h3>
-
-<h4>MD Sharks | 2023–Present</h4>
-
-<p>
-
-Managing complete revenue cycle operations, denial analysis, payment posting, KPI reporting, and payer communications.
-
-</p>
-
-</div>
-
-<div class="item">
-
-<h3>Medical Billing Specialist</h3>
-
-<h4>Integrity Healthcare Billing | 2022–2023</h4>
-
-<p>
-
-Eligibility verification, authorizations, claims processing, reconciliations, appeals, and mentoring junior staff.
-
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-<section id="skills" class="reveal">
-
-<h2 class="title">Skills</h2>
-
-<div class="skills">
-
-<div>
-
-Revenue Cycle Management
-
-<div class="bar"><div class="fill" style="width:95%"></div></div>
-
-</div>
-
-<div>
-
-Claims Submission
-
-<div class="bar"><div class="fill" style="width:92%"></div></div>
-
-</div>
-
-<div>
-
-HIPAA Compliance
-
-<div class="bar"><div class="fill" style="width:96%"></div></div>
-
-</div>
-
-<div>
-
-Denial Management
-
-<div class="bar"><div class="fill" style="width:90%"></div></div>
-
-</div>
-
-<div>
-
-Payment Posting
-
-<div class="bar"><div class="fill" style="width:88%"></div></div>
-
-</div>
-
-</div>
-
-</section>
-
-<section id="contact" class="reveal">
-
-<h2 class="title">Contact</h2>
-
-<div class="grid">
-
-<div class="card">
-
-<h3>Email</h3>
-
-<p>faizankhan20268@gmail.com</p>
-
-</div>
-
-<div class="card">
-
-<h3>Phone</h3>
-
-<p>(518) 600-3845</p>
-
-</div>
-
-<div class="card">
-
-<h3>Location</h3>
-
-<p>Carteret, New Jersey</p>
-
-</div>
-
-</div>
-
-</section>
-
-<footer>
-
-© 2026 Faizan Khan • Designed with HTML & CSS
-
-</footer>
-
-<script>
-
-const observer=new IntersectionObserver(entries=>{
-
-entries.forEach(entry=>{
-
-if(entry.isIntersecting){
-
-entry.target.classList.add("active");
-
-}
-
-});
-
-});
-
-document.querySelectorAll(".reveal").forEach(el=>observer.observe(el));
-
-</script>
-
-</body>
-</html>
